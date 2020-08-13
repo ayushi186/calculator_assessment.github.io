@@ -28,7 +28,7 @@ this.currentOperand = this.currentOperand.toString() + number.toString();
 checkOperation(operation){
     console.log(operation);
 /*there is no number passed fo before hitting the operator (+,-,*,÷) stop!*/
-     if(this.currentOperand === '')  return;
+    if(this.currentOperand === '')  return;
 /*below else if condition is used to check for concatenated operations like - 2+2=4*3=12-2  alongwith normal single calculation*/ 
     else if (this.previousOperand !== '' ){
         this.compute();
@@ -79,12 +79,16 @@ compute(){
 
 /*This method keeps updating the diplay of the calculator as an when any calculation happen or any input is provided by calculator key */
 updateDisplay(){
-    if (this.currentOperand === ''){
+    if (this.currentOperand === '' && this.previousOperand !== ''){
         this.displayElement.innerText = this.previousOperand ;
     }
      
-    else{
+    else if (this.currentOperand !== ''){
         this.displayElement.innerText = this.currentOperand ;
+    }
+    else {
+        this.displayElement.innerText = '0';
+
     }
 }
 }
