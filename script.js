@@ -18,7 +18,9 @@ allClear(){
  this.operation = '';
 }
 // this method is for appending the number in a row for calculation//
+
 appendNumberToDisplay(number){
+// when there is already a decimal typed in and next decimal is passed then stop processing this code! 
 if(number === '.' && this.currentOperand.includes('.')) return;
 this.currentOperand = this.currentOperand.toString() + number.toString();
 
