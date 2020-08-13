@@ -4,20 +4,20 @@ const equalsBtn = document.querySelector('[data-equals]');
 const allClearBtn = document.querySelector('[data-clear]');
 const displayElement = document.querySelector('[data-display]');
 
-
+//calculator class//
 class calculator {
     constructor(displayElement){
         this.displayElement = displayElement;
         this.allClear();
     }
-
+//this method clears the display element innertext//
 allClear(){
  this.displayElement.innerText = '0';
  this.currentOperand = '';
  this.previousOperand = ''
  this.operation = '';
 }
-
+// this method is for appending the number in a row for calculation//
 appendNumberToDisplay(number){
 if(number === '.' && this.currentOperand.includes('.')) return;
 this.currentOperand = this.currentOperand.toString() + number.toString();
@@ -109,12 +109,12 @@ operatorBtns.forEach(btn => {
 })
 
 
-
+//on clicking the = button output the result//
 equalsBtn.addEventListener('click', () => {
       calculator1.compute();
       calculator1.updateDisplay();
 })
-
+//on clicking on the AC button all the value resets //
 allClearBtn.addEventListener('click' , () =>{
     calculator1.allClear();
   })
