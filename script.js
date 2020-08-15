@@ -1,3 +1,4 @@
+// select all the buttons and the textarea that displays the results using querySelector//
 const numberBtns = document.querySelectorAll('[data-number]');
 const operatorBtns = document.querySelectorAll('[data-operation]');
 const equalsBtn = document.querySelector('[data-equals]');
@@ -22,6 +23,7 @@ allClear(){
 appendNumberToDisplay(number){
 // when there is already a decimal typed in and next decimal is passed then stop processing this code! 
 if(number === '.' && this.currentOperand.includes('.')) return;
+//otherwise append any consecutive number passed through keypad//
 this.currentOperand = this.currentOperand.toString() + number.toString();
 
 }
@@ -29,7 +31,7 @@ this.currentOperand = this.currentOperand.toString() + number.toString();
 
 checkOperation(operation){
     console.log(operation);
-/*there is no number passed fo before hitting the operator (+,-,*,÷) stop!*/
+/*if there is no number passed before hitting the operator (+,-,*,÷)  or a operators are hit back to back without passing operand then stop! */
     if(this.currentOperand === '')  return;
 /*below else if condition is used to check for concatenated operations like - 2+2=4*3=12-2  alongwith normal single calculation*/ 
     else if (this.previousOperand !== '' ){
@@ -115,12 +117,12 @@ operatorBtns.forEach(btn => {
 })
 
 
-//on clicking the = button output the result//
+//on clicking the '=' button output the result//
 equalsBtn.addEventListener('click', () => {
       calculator1.compute();
       calculator1.updateDisplay();
 })
-//on clicking on the AC button all the value resets //
+//on clicking on the AC(all clear) button all the value resets //
 allClearBtn.addEventListener('click' , () =>{
     calculator1.allClear();
   })
