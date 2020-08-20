@@ -6,7 +6,8 @@ const operatorBtns = document.querySelectorAll('[data-operation]');
 const equalsBtn = document.querySelector('[data-equals]');
 const allClearBtn = document.querySelector('[data-clear]');
 const displayElement = document.querySelector('[data-display]');
-
+const checkelement = document.querySelector("#container .calculator__display");
+console.log(checkelement);
 //calculator class//
 
 

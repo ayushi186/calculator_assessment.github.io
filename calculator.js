@@ -1,7 +1,9 @@
 export default class Calculator {
     constructor(displayElement) {
         this.displayElement = displayElement;
-        this.clear();
+        this.currentOperand = '';
+        this.previousOperand = ''
+        this.operation = '';
     }
     //this method clears the display element innertext//
     allClear() {
@@ -11,11 +13,11 @@ export default class Calculator {
         this.operation = '';
     }
 
-    clear() {
+    /*clear() {
         this.currentOperand = '';
         this.previousOperand = ''
         this.operation = '';
-    }
+    }*/
     // this method is for appending the number in a row for calculation//
 
     appendNumberToDisplay(number) {
